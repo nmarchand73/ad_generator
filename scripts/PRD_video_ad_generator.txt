@@ -1,0 +1,123 @@
+<context>
+# Overview  
+A web application that enables users to generate professional video ads using AI-generated avatars and scripts. The app is designed for marketers, startups, and businesses seeking quick, high-quality promotional videos. Users can customize their ads by uploading screencasts of their products, selecting AI avatars, generating scripts, adding background music, and overlaying text. The final video is rendered and made available for download.
+
+# Core Features  
+- **AI Avatar Generation**
+  - Users select from a library of AI-generated avatars or create a custom avatar.
+  - Avatars are animated to speak the generated script.
+  - Importance: Personalizes ads, increases engagement.
+  - High-level: Integrate with an AI avatar/video generation API (e.g., D-ID, Synthesia, or similar).
+
+- **Script Generation**
+  - Users input a product description or key points; the app generates a compelling ad script using AI (e.g., GPT-4).
+  - Importance: Saves time, ensures professional messaging.
+  - High-level: Use OpenAI API for script generation.
+
+- **Screencast Upload**
+  - Users can upload a screencast of their product in action.
+  - The screencast is inserted into the video, either as a picture-in-picture or as a main segment.
+  - Importance: Demonstrates product features directly.
+  - High-level: File upload, video compositing.
+
+- **Background Music Selection**
+  - Users choose from royalty-free music tracks or upload their own.
+  - Music is mixed into the final video.
+  - Importance: Enhances emotional impact.
+  - High-level: Audio library integration, audio mixing.
+
+- **Text Overlay**
+  - Users can add and position text overlays (e.g., slogans, CTAs) on the video.
+  - Importance: Reinforces key messages.
+  - High-level: UI for text input/positioning, video rendering with overlays.
+
+- **Video Rendering & Download**
+  - The app composes all elements into a final video.
+  - Users can preview and download the finished ad.
+  - Importance: Delivers a ready-to-use asset.
+  - High-level: Server-side or cloud-based video rendering pipeline.
+
+# User Experience  
+- **User Personas**
+  - Marketers, founders, small business owners, content creators.
+- **Key User Flows**
+  1. Sign up/log in
+  2. Start new ad project
+  3. Enter product info or upload screencast
+  4. Select/generate AI avatar
+  5. Generate/edit script
+  6. Choose/add music
+  7. Add text overlays
+  8. Preview video
+  9. Download final video
+- **UI/UX Considerations**
+  - Simple, step-by-step wizard interface
+  - Real-time previews where possible
+  - Clear feedback on video rendering progress
+  - Mobile-friendly design
+
+</context>
+<PRD>
+# Technical Architecture  
+- **Frontend:** Next.js (React), TypeScript, Tailwind CSS (or similar)
+- **Backend:** Node.js API (can be integrated in Next.js API routes)
+- **AI Services:**
+  - Script generation: OpenAI API
+  - Avatar video: D-ID, Synthesia, or similar API
+- **Video Processing:**
+  - ffmpeg (server-side or via cloud function)
+  - Video compositing: Combine avatar, screencast, overlays, music
+- **Storage:**
+  - User uploads: Cloud storage (e.g., AWS S3, GCP Storage)
+  - Final videos: Temporary storage for download
+- **Authentication:**
+  - Auth0, NextAuth.js, or similar
+- **Deployment:**
+  - Vercel, AWS, or similar
+
+# Development Roadmap  
+- **MVP Requirements:**
+  - User authentication
+  - Project creation flow
+  - Script generation via OpenAI
+  - Avatar video generation via API
+  - Screencast upload & integration
+  - Music selection/upload
+  - Text overlay UI
+  - Video rendering pipeline
+  - Download functionality
+- **Future Enhancements:**
+  - More avatar customization
+  - Multi-language support
+  - Advanced video editing (transitions, effects)
+  - Team collaboration features
+  - Analytics dashboard
+
+# Logical Dependency Chain
+- Set up authentication and user/project models first
+- Implement script generation and avatar video API integration
+- Add screencast upload and video compositing
+- Integrate music and text overlay features
+- Build video rendering and download pipeline
+- Polish UI/UX and add previews
+
+# Risks and Mitigations  
+- **AI API costs:**
+  - Mitigation: Limit free usage, require payment for high volume
+- **Video rendering performance:**
+  - Mitigation: Use cloud functions or queue jobs for heavy processing
+- **User-uploaded content moderation:**
+  - Mitigation: Add basic file type/size checks, consider moderation API
+- **Integration complexity:**
+  - Mitigation: Start with basic flows, add advanced features iteratively
+
+# Appendix  
+- **Research findings:**
+  - D-ID, Synthesia, HeyGen for avatar video APIs
+  - OpenAI for script generation
+  - ffmpeg for video compositing
+- **Technical specifications:**
+  - Video output: MP4, 1080p
+  - Max upload size: 200MB
+  - Supported browsers: Chrome, Firefox, Edge, Safari
+</PRD> 

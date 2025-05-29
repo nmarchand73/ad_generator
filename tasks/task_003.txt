@@ -1,0 +1,15 @@
+# Task ID: 3
+# Title: Develop Project Creation Flow
+# Status: pending
+# Dependencies: 2
+# Priority: high
+# Description: Create the user interface and backend logic for starting a new ad project, including project metadata storage.
+# Details:
+1. Design and implement a 'New Project' page
+2. Create API routes for project creation and retrieval
+3. Implement project metadata storage in the database
+4. Add form validation for project details
+5. Create a projects dashboard for users to view and manage their projects
+
+# Test Strategy:
+Test project creation, retrieval, and listing functionality. Ensure proper validation of input fields. Write unit tests for API routes and integration tests for the project creation flow.

@@ -1,0 +1,16 @@
+# Task ID: 4
+# Title: Integrate OpenAI API for Script Generation
+# Status: pending
+# Dependencies: 3
+# Priority: high
+# Description: Implement the script generation feature using the OpenAI API based on user input.
+# Details:
+1. Set up OpenAI API client
+2. Create an API route for script generation
+3. Implement user interface for entering product description or key points
+4. Send user input to OpenAI API and receive generated script
+5. Allow users to edit and save the generated script
+6. Implement error handling and rate limiting
+
+# Test Strategy:
+Test script generation with various inputs. Mock OpenAI API responses for consistent testing. Verify error handling and rate limiting functionality. Write unit tests for the script generation logic.
